@@ -18,5 +18,5 @@ server.on("request",(req,res)=>{
 })
 
 server.listen(8080,()=>{
-    console.log("Serveur en écoute ...")
+    console.log("Le serveur en écoute ...")
 });
