@@ -1,15 +1,17 @@
 http = require("http");
 fs = require("fs");
+url=require("url");
 
 server = http.createServer();
 
 server.on("request",(req,res)=>{
 
     console.log("requete recu");
-    console.log(req.url);//recuperer les parametres passe dans url
+    console.log(url.parse(req.url,true).query.nom);//Extrait un parametre de URL retourner sous forme Objet et affiche dans la console
+    // console.log(req.url);//recuperer les parametres passe dans url
 
-    tab=req.url.split("=");
-    console.log(tab[1]);
+    // tab=req.url.split("=");
+    // console.log(tab[1]);
 
     fs.readFile("index.html","utf-8",(err,data)=>{
         if(err){
