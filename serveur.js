@@ -22,7 +22,7 @@ server.on("request",(req,res)=>{
             res.writeHead(200,{
                 "content-type":"text/html;charset=utf-8"
             });
-            res.write(data);
+            res.write(data.replace("****",url.parse(req.url,true).query.nom));//Extrait le parametre dans URL, remplace les **** par le parametre et ecrit dans la page en reponse 
             // res.writeHead(210,{
             //     "content-type":"text/json"
             // });
